@@ -43,6 +43,8 @@ var movement_speed = int()
 var angular_acceleration = int()
 var acceleration = int()
 
+
+
 func _ready(): # Camera based Rotation
 	direction = Vector3.BACK.rotated(Vector3.UP, $Camroot/h.global_transform.basis.get_euler().y)
 
@@ -145,6 +147,7 @@ func _physics_process(delta):
 					Input.get_action_strength("forward") - Input.get_action_strength("backward"))
 		direction = direction.rotated(Vector3.UP, h_rot).normalized()
 		is_walking = true
+		
 		
 	# Sprint input, dash state and movement speed
 		if Input.is_action_pressed("sprint") and $DashTimer.is_stopped() and (is_walking == true ):
