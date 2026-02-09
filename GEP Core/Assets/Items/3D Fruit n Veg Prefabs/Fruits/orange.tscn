@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://diy18731prce6"]
+
+[ext_resource type="PackedScene" uid="uid://da1j5lp5emohp" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/orange.glb" id="1_j5q87"]
+[ext_resource type="Material" uid="uid://cm12wr5xd8hut" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_fruit.tres" id="2_obqu2"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_pl78m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pl78m"]
+size = Vector3(0.0959167, 0.0992432, 0.0975647)
+
+[node name="orange" groups=["items"] instance=ExtResource("1_j5q87")]
+transform = Transform3D(17.1172, 0, 0, 0, 17.1172, 0, 0, 0, 17.1172, 0, 0, 0)
+script = ExtResource("2_pl78m")
+item_name = "orange"
+item_icon_name = "Orange2D"
+
+[node name="Orange" parent="." index="0"]
+material_override = ExtResource("2_obqu2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000778168, 0.0440063, -0.00160216)
+shape = SubResource("BoxShape3D_pl78m")

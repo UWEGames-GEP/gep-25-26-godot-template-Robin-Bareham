@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcrlnqn78bgp4"]
+
+[ext_resource type="PackedScene" uid="uid://bfqd4ml66h84r" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/tomato.glb" id="1_xdyu8"]
+[ext_resource type="Material" uid="uid://b1y1q3s2q4i75" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_vegetable.tres" id="2_30olm"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_truli"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_truli"]
+size = Vector3(0.104618, 0.0804443, 0.101639)
+
+[node name="tomato" groups=["items"] instance=ExtResource("1_xdyu8")]
+transform = Transform3D(12.6947, 0, 0, 0, 12.6947, 0, 0, 0, 12.6947, 0, 0, 0)
+script = ExtResource("2_truli")
+item_name = "tomato"
+item_icon_name = "Tomato2D"
+
+[node name="Tomato" parent="." index="0"]
+material_override = ExtResource("2_30olm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00281318, 0.0332642, 0.000236293)
+shape = SubResource("BoxShape3D_truli")

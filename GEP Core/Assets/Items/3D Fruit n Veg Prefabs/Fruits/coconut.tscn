@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfjfuvx2ldwm2"]
+
+[ext_resource type="PackedScene" uid="uid://dsd266ga5mb3a" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/coconut.glb" id="1_1staw"]
+[ext_resource type="Material" uid="uid://cm12wr5xd8hut" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_fruit.tres" id="2_8qer7"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_67cpi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67cpi"]
+size = Vector3(0.145203, 0.135971, 0.13501)
+
+[node name="coconut" groups=["items"] instance=ExtResource("1_1staw")]
+transform = Transform3D(10.0744, 0, 0, 0, 10.0744, 0, 0, 0, 10.0744, 0, 0, 0)
+script = ExtResource("2_67cpi")
+item_name = "coconut"
+item_icon_name = "Coconut2D"
+
+[node name="Coconut" parent="." index="0"]
+material_override = ExtResource("2_8qer7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000762961, 0.0588608, -0.00158693)
+shape = SubResource("BoxShape3D_67cpi")

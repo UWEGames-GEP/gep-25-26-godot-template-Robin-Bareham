@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Gd Quest-3 Rd-person-character-demo"
 
+[global_group]
+
+items=""
+
 [input]
 
 sprint={

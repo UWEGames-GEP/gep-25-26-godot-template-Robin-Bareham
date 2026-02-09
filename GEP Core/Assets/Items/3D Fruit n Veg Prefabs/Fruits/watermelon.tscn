@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://djc5c1oyajhky"]
+
+[ext_resource type="PackedScene" uid="uid://cgjviu7aqhrcj" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/watermelon.glb" id="1_o0ic8"]
+[ext_resource type="Material" uid="uid://cm12wr5xd8hut" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_fruit.tres" id="2_aw2e5"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_bu535"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bu535"]
+size = Vector3(0.230286, 0.230957, 0.230103)
+
+[node name="watermelon" groups=["items"] instance=ExtResource("1_o0ic8")]
+transform = Transform3D(7.0795, 0, 0, 0, 7.0795, 0, 0, 0, 7.0795, 0, 0, 0)
+script = ExtResource("2_bu535")
+item_name = "watermelon"
+item_icon_name = "Watermelon2D"
+
+[node name="Watermelon" parent="." index="0"]
+material_override = ExtResource("2_aw2e5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00125125, 0.104736, 0.000427304)
+shape = SubResource("BoxShape3D_bu535")

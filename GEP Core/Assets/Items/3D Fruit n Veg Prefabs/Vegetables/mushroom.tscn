@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dem65xjvr3ep8"]
+
+[ext_resource type="PackedScene" uid="uid://qi7oym14ti4x" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/mushroom.glb" id="1_lf8yv"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_agxug"]
+[ext_resource type="Material" uid="uid://b1y1q3s2q4i75" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_vegetable.tres" id="2_m7mpx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_agxug"]
+size = Vector3(0.0438538, 0.0432739, 0.0507813)
+
+[node name="mushroom" groups=["items"] instance=ExtResource("1_lf8yv")]
+transform = Transform3D(28.4143, 0, 0, 0, 28.4143, 0, 0, 0, 28.4143, 0, 0, 0)
+script = ExtResource("2_agxug")
+item_name = "mushroom"
+item_icon_name = "Mushroom2D"
+
+[node name="Mushroom" parent="." index="0"]
+material_override = ExtResource("2_m7mpx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000358833, 0.0162951, -0.00104408)
+shape = SubResource("BoxShape3D_agxug")

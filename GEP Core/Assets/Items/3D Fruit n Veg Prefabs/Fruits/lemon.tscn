@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpvj4gq161mlj"]
+
+[ext_resource type="PackedScene" uid="uid://y2a25tbb8yj7" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/lemon.glb" id="1_k6v8h"]
+[ext_resource type="Material" uid="uid://cm12wr5xd8hut" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_fruit.tres" id="2_bgvoi"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_ojn3g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojn3g"]
+size = Vector3(0.0808105, 0.0834961, 0.106689)
+
+[node name="lemon" groups=["items"] instance=ExtResource("1_k6v8h")]
+transform = Transform3D(17.3898, 0, 0, 0, 17.3898, 0, 0, 0, 17.3898, 0, 0, 0)
+script = ExtResource("2_ojn3g")
+item_name = "lemon"
+item_icon_name = "Lemon2D"
+
+[node name="Lemon" parent="." index="0"]
+material_override = ExtResource("2_bgvoi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000366152, 0.0371095, 0.00305178)
+shape = SubResource("BoxShape3D_ojn3g")

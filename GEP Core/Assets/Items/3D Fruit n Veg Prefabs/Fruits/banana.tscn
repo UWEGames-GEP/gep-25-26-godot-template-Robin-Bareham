@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dctx7sbnoqhyc"]
+
+[ext_resource type="PackedScene" uid="uid://b1cjwtuwnnsqc" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/banana.glb" id="1_mt3k5"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_sdaqf"]
+[ext_resource type="Material" uid="uid://cm12wr5xd8hut" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_fruit.tres" id="2_yirx7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdaqf"]
+size = Vector3(0.0980988, 0.06604, 0.206726)
+
+[node name="banana" groups=["items"] instance=ExtResource("1_mt3k5")]
+transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, 0, 0, 0)
+script = ExtResource("2_sdaqf")
+item_name = "banana"
+item_icon_name = "Banana2D"
+
+[node name="Banana" parent="." index="0"]
+material_override = ExtResource("2_yirx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0195847, 0.0226441, -0.00656128)
+shape = SubResource("BoxShape3D_sdaqf")

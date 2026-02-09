@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://mm84upwiu3pr"]
+
+[ext_resource type="PackedScene" uid="uid://cvd78yauqdnxb" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/potato.glb" id="1_solky"]
+[ext_resource type="Material" uid="uid://b1y1q3s2q4i75" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_vegetable.tres" id="2_j0e1q"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_l1qb2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l1qb2"]
+size = Vector3(0.0856247, 0.0766602, 0.143982)
+
+[node name="potato" groups=["items"] instance=ExtResource("1_solky")]
+transform = Transform3D(12.2784, 0, 0, 0, 12.2784, 0, 0, 0, 12.2784, 0, 0, 0)
+script = ExtResource("2_l1qb2")
+item_name = "potato"
+item_icon_name = "Potato2D"
+
+[node name="Potato" parent="." index="0"]
+material_override = ExtResource("2_j0e1q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000990013, 0.0385742, 0.00873415)
+shape = SubResource("BoxShape3D_l1qb2")

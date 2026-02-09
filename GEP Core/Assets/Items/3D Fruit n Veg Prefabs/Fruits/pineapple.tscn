@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://xwa17g0crs8s"]
+
+[ext_resource type="PackedScene" uid="uid://blj5ty1bryrge" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/pineapple.glb" id="1_7dqti"]
+[ext_resource type="Material" uid="uid://cm12wr5xd8hut" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_fruit.tres" id="2_55lge"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_u2cwt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u2cwt"]
+size = Vector3(0.122139, 0.390869, 0.124512)
+
+[node name="pineapple" groups=["items"] instance=ExtResource("1_7dqti")]
+transform = Transform3D(7.54806, 0, 0, 0, 7.54806, 0, 0, 0, 7.54806, 0, 0, 0)
+script = ExtResource("2_u2cwt")
+item_name = "pineapple"
+item_icon_name = "Pineapple2D"
+
+[node name="Pineapple" parent="." index="0"]
+material_override = ExtResource("2_55lge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000957481, 0.179578, 0.00230537)
+shape = SubResource("BoxShape3D_u2cwt")

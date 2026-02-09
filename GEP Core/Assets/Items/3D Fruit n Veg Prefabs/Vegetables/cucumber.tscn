@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm32nu4ew23ov"]
+
+[ext_resource type="PackedScene" uid="uid://claw51ny8e28s" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/cucumber.glb" id="1_3akyu"]
+[ext_resource type="Material" uid="uid://b1y1q3s2q4i75" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_vegetable.tres" id="2_rljun"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_tmio1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tmio1"]
+size = Vector3(0.0667572, 0.0588379, 0.270142)
+
+[node name="cucumber" groups=["items"] instance=ExtResource("1_3akyu")]
+transform = Transform3D(7.56665, 0, 0, 0, 7.56665, 0, 0, 0, 7.56665, 0, 0, 0)
+script = ExtResource("2_tmio1")
+item_name = "cucumber"
+item_icon_name = "Cucumber2D"
+
+[node name="Cucumber" parent="." index="0"]
+material_override = ExtResource("2_rljun")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.00374604, 0.0213623, 0.0120239)
+shape = SubResource("BoxShape3D_tmio1")

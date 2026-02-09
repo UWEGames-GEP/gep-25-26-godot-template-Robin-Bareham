@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpjhge18lw2ua"]
+
+[ext_resource type="PackedScene" uid="uid://c3k0x7mgldhyp" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Models/carrot.glb" id="1_fol3v"]
+[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_i6eqv"]
+[ext_resource type="Material" uid="uid://b1y1q3s2q4i75" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_vegetable.tres" id="2_r606f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i6eqv"]
+size = Vector3(0.0419617, 0.0460205, 0.234894)
+
+[node name="carrot" groups=["items"] instance=ExtResource("1_fol3v")]
+transform = Transform3D(10.1639, 0, 0, 0, 10.1639, 0, 0, 0, 10.1639, 0, 0, 0)
+script = ExtResource("2_i6eqv")
+item_name = "carrot"
+item_icon_name = "Carrot2D"
+
+[node name="Carrot" parent="." index="0"]
+material_override = ExtResource("2_r606f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011444, 0.0117798, -0.0162811)
+shape = SubResource("BoxShape3D_i6eqv")
