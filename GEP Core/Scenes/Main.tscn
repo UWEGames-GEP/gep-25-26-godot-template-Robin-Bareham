@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=14 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Script" uid="uid://c5dqp7ciiqfxl" path="res://GEP Core/Scripts/main.gd" id="1_nj1m4"]
+[ext_resource type="PackedScene" uid="uid://ddx5uc4jdbphc" path="res://GEP Core/Scenes/Item.tscn" id="2_5x4se"]
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="2_njqjn"]
 [ext_resource type="Material" uid="uid://c1u020xb37y6n" path="res://addons/ThirdPersonTemplate/Environments/Materials/Blue.material" id="3_5x4se"]
 [ext_resource type="Material" uid="uid://bly25nr0aqsv3" path="res://addons/ThirdPersonTemplate/Environments/Materials/BlueGrid.material" id="4_g25g5"]
@@ -27,6 +28,7 @@ default_font_size = 20
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, 0.163605)
 script = ExtResource("1_nj1m4")
+item_scene = ExtResource("2_5x4se")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.892271, -0.274443, 0.358516, 2.02684e-08, 0.794054, 0.607847, -0.451501, 0.542364, -0.708511, 0, 2.76815, 9.26053)
@@ -39,12 +41,16 @@ environment = SubResource("Environment_qyvd4")
 
 [node name="FloorAlt" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14287, 0)
+layers = 5
 size = Vector3(48.5, 0.1, 48.5)
 material = ExtResource("3_5x4se")
 
 [node name="Floor" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14482, 0)
+layers = 5
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(47.5872, 0.1, 47.791)
 material = ExtResource("4_g25g5")
 
@@ -124,6 +130,7 @@ material = ExtResource("8_l0loc")
 
 [node name="PlayerTemplate" parent="." instance=ExtResource("9_tv4n6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.8399)
+collision_mask = 6
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -162,6 +169,7 @@ theme_override_font_sizes/font_size = 80
 text = "PAUSED"
 
 [node name="Inventory" type="ColorRect" parent="UserInterface"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -186,3 +194,11 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "INVENTORY"
+
+[node name="Item" parent="." instance=ExtResource("2_5x4se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06911, 0.69482, -11.3813)
+item_name = "Strawberry"
+
+[node name="Item2" parent="." instance=ExtResource("2_5x4se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18166, 0.694819, -11.5719)
+item_name = "Apple"
