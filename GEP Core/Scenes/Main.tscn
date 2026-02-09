@@ -195,10 +195,14 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 80
 text = "INVENTORY"
 
-[node name="Item" parent="." instance=ExtResource("2_5x4se")]
+[node name="Apple" parent="." instance=ExtResource("2_5x4se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13822, 1.38964, -22.7625)
+item_name = "Apple"
+item_icon_name = "Apple2D"
+item_colour = "Red"
+
+[node name="Strawberry" parent="." instance=ExtResource("2_5x4se")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06911, 0.69482, -11.3813)
 item_name = "Strawberry"
-
-[node name="Item2" parent="." instance=ExtResource("2_5x4se")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18166, 0.694819, -11.5719)
-item_name = "Apple"
+item_icon_name = "Strawberry2D"
+item_colour = "White"
