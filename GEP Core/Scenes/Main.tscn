@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=15 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Script" uid="uid://c5dqp7ciiqfxl" path="res://GEP Core/Scripts/main.gd" id="1_nj1m4"]
 [ext_resource type="PackedScene" uid="uid://ddx5uc4jdbphc" path="res://GEP Core/Scenes/Item.tscn" id="2_5x4se"]
@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://bquocw2a8n271" path="res://addons/ThirdPersonTemplate/Environments/Materials/GreyGrid.material" id="8_l0loc"]
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="9_tv4n6"]
 [ext_resource type="FontFile" uid="uid://ckcmp1hno3ms7" path="res://GEP Core/Assets/Fonts/LiberationSans.ttf" id="10_usxcr"]
+[ext_resource type="PackedScene" uid="uid://bplbhlq6jqjtj" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Prefabs/Fruits/apple.tscn" id="12_5x4se"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -196,7 +197,7 @@ theme_override_font_sizes/font_size = 80
 text = "INVENTORY"
 
 [node name="Apple" parent="." instance=ExtResource("2_5x4se")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13822, 1.38964, -22.7625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13822, 0.635521, -15.291)
 item_name = "Apple"
 item_icon_name = "Apple2D"
 item_colour = "Red"
@@ -206,3 +207,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06911, 0.69482, -11.3813)
 item_name = "Strawberry"
 item_icon_name = "Strawberry2D"
 item_colour = "White"
+
+[node name="apple" parent="." instance=ExtResource("12_5x4se")]
+transform = Transform3D(6.50345, 0, 0, 0, 6.50345, 0, 0, 0, 6.50345, 6.62691, 0.194857, -12.8506)

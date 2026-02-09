@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cm12wr5xd8hut"]
 
-[ext_resource type="Texture2D" uid="uid://b27ogq65rymjo" path="res://Low Poly Food Asset Pack/Kyle Fuji/Textures/T_fruit_atlas_diffuse.png" id="1_s74yd"]
-[ext_resource type="Texture2D" uid="uid://ccfhfror5bb7y" path="res://Low Poly Food Asset Pack/Kyle Fuji/Textures/T_fruit_atlas_normal.png" id="2_8n18r"]
+[ext_resource type="Texture2D" uid="uid://b27ogq65rymjo" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Textures/T_fruit_atlas_diffuse.png" id="1_s74yd"]
+[ext_resource type="Texture2D" uid="uid://ccfhfror5bb7y" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Textures/T_fruit_atlas_normal.png" id="2_8n18r"]
 
 [resource]
 albedo_texture = ExtResource("1_s74yd")

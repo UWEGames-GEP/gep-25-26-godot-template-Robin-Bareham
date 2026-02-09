@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="1_ev8d6"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_4i62l"]
+[sub_resource type="BoxMesh" id="BoxMesh_4ayri"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ev8d6"]
 
@@ -14,7 +14,8 @@ script = ExtResource("1_ev8d6")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="ItemMesh" type="MeshInstance3D" parent="Pivot"]
-mesh = SubResource("BoxMesh_4i62l")
+transform = Transform3D(1.18994, 0, 0, 0, 1.18994, 0, 0, 0, 1.18994, 0, 0, 0)
+mesh = SubResource("BoxMesh_4ayri")
 
 [node name="ItemCollision" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ev8d6")
