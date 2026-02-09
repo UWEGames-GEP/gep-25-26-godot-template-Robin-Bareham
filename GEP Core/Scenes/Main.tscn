@@ -197,16 +197,19 @@ theme_override_font_sizes/font_size = 80
 text = "INVENTORY"
 
 [node name="Apple" parent="." instance=ExtResource("2_5x4se")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13822, 0.635521, -15.291)
-item_name = "Apple"
+transform = Transform3D(0.997986, 0, 0, 0, 0.997986, 0, 0, 0, 0.997986, 4.13822, 0.635521, -15.291)
+item_mesh_name = "apple_mesh"
 item_icon_name = "Apple2D"
-item_colour = "Red"
+item_type = "fruit"
 
-[node name="Strawberry" parent="." instance=ExtResource("2_5x4se")]
+[node name="Carrot" parent="." instance=ExtResource("2_5x4se")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06911, 0.69482, -11.3813)
-item_name = "Strawberry"
-item_icon_name = "Strawberry2D"
-item_colour = "White"
+item_mesh_name = "carrot_mesh"
+item_icon_name = "Carrot2D"
+item_type = "veg"
+
+[node name="Item" parent="." instance=ExtResource("2_5x4se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425307, 0.789788, -17.1922)
 
 [node name="apple" parent="." instance=ExtResource("12_5x4se")]
-transform = Transform3D(6.50345, 0, 0, 0, 6.50345, 0, 0, 0, 6.50345, 6.62691, 0.194857, -12.8506)
+transform = Transform3D(11.8902, 0, 0, 0, 11.8902, 0, 0, 0, 11.8902, 5.14019, 0.194857, -18.1362)

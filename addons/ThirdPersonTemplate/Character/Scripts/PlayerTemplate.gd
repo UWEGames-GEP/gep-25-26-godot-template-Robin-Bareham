@@ -184,6 +184,7 @@ func _physics_process(delta):
 		if(collision.get_collider() == null):
 			continue
 		if(collision.get_collider().is_in_group("items")):
+			print_debug("ITEMS AHOI")
 			var item = collision.get_collider()
 			if(Vector3.UP.dot(collision.get_normal()) > 0.1):
 				item.collected()
