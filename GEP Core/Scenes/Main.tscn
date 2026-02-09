@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://bquocw2a8n271" path="res://addons/ThirdPersonTemplate/Environments/Materials/GreyGrid.material" id="8_l0loc"]
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="9_tv4n6"]
 [ext_resource type="FontFile" uid="uid://ckcmp1hno3ms7" path="res://GEP Core/Assets/Fonts/LiberationSans.ttf" id="10_usxcr"]
-[ext_resource type="PackedScene" uid="uid://bplbhlq6jqjtj" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Prefabs/Fruits/apple.tscn" id="12_5x4se"]
+[ext_resource type="ArrayMesh" uid="uid://chxed3qfu55xa" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Mesh/Apple_Mesh.res" id="12_wt3ry"]
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -58,30 +58,40 @@ material = ExtResource("4_g25g5")
 [node name="CSGBox3D2" type="CSGBox3D" parent="Level"]
 transform = Transform3D(0.833182, 0, 0.552999, 0, 1, 0, -0.552999, 0, 0.833182, 16.5416, 3.19482, -15.014)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(4, 6, 8)
 material = ExtResource("5_wt3ry")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Level"]
 transform = Transform3D(-0.318513, 0, 0.947919, 0, 1, 0, -0.947919, 0, -0.318513, 0.541599, 13.1948, 3.986)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(4, 6, 8)
 material = ExtResource("5_wt3ry")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.19482, -6.9983)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(6, 8, 6)
 material = ExtResource("6_qr3ta")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.19482, -6.9983)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(4, 4, 6)
 material = ExtResource("6_qr3ta")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.19482, -10.9983)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(4, 2, 2)
 material = ExtResource("6_qr3ta")
 
@@ -91,23 +101,31 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Level/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.233154, 0.69482, -0.0343475)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(8, 1, 1)
 material = ExtResource("7_2rqs0")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Level/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76685, 1.69482, -0.0343475)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(4, 1, 1)
 material = ExtResource("7_2rqs0")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Level/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76685, 2.69482, -0.0343475)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 material = ExtResource("7_2rqs0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.19482, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000460625, 5.17615, 4.00011)
 use_collision = true
+collision_layer = 4
+collision_mask = 0
 size = Vector3(24, 10, 16)
 material = ExtResource("8_l0loc")
 
@@ -197,19 +215,15 @@ theme_override_font_sizes/font_size = 80
 text = "INVENTORY"
 
 [node name="Apple" parent="." instance=ExtResource("2_5x4se")]
-transform = Transform3D(0.997986, 0, 0, 0, 0.997986, 0, 0, 0, 0.997986, 4.13822, 0.635521, -15.291)
+transform = Transform3D(0.997986, 0, 0, 0, 0.997986, 0, 0, 0, 0.997986, 3.53573, 0.181504, -13.7458)
 item_mesh_name = "apple_mesh"
 item_icon_name = "Apple2D"
 item_type = "fruit"
+item_mesh = ExtResource("12_wt3ry")
 
-[node name="Carrot" parent="." instance=ExtResource("2_5x4se")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06911, 0.69482, -11.3813)
-item_mesh_name = "carrot_mesh"
-item_icon_name = "Carrot2D"
-item_type = "veg"
-
-[node name="Item" parent="." instance=ExtResource("2_5x4se")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.425307, 0.789788, -17.1922)
-
-[node name="apple" parent="." instance=ExtResource("12_5x4se")]
-transform = Transform3D(11.8902, 0, 0, 0, 11.8902, 0, 0, 0, 11.8902, 5.14019, 0.194857, -18.1362)
+[node name="Apple" parent="Apple" instance=ExtResource("2_5x4se")]
+transform = Transform3D(0.997986, 0, 0, 0, 0.997986, 0, 0, 0, 0.997986, -8.34604, 1.65786, -1.61268)
+item_mesh_name = "apple_mesh"
+item_icon_name = "Apple2D"
+item_type = "fruit"
+item_mesh = ExtResource("12_wt3ry")

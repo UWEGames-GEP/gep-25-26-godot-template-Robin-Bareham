@@ -17,7 +17,7 @@ script = ExtResource("1_ev8d6")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="ItemMesh" type="MeshInstance3D" parent="Pivot"]
-transform = Transform3D(1.18994, 0, 0, 0, 1.18994, 0, 0, 0, 1.18994, 0, 0, 0)
+transform = Transform3D(6.97733, 0, 0, 0, 6.97733, 0, 0, 0, 6.97733, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_4ayri")
 mesh = SubResource("BoxMesh_4ayri")
 
