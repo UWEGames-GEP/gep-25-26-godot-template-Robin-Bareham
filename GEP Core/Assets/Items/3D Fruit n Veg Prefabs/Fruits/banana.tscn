@@ -16,6 +16,8 @@ item_icon_name = "Banana2D"
 [node name="Banana" parent="." index="0"]
 material_override = ExtResource("2_yirx7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0195847, 0.0226441, -0.00656128)
 shape = SubResource("BoxShape3D_sdaqf")

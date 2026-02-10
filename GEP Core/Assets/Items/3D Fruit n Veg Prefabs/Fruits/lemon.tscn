@@ -16,6 +16,8 @@ item_icon_name = "Lemon2D"
 [node name="Lemon" parent="." index="0"]
 material_override = ExtResource("2_bgvoi")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000366152, 0.0371095, 0.00305178)
 shape = SubResource("BoxShape3D_ojn3g")

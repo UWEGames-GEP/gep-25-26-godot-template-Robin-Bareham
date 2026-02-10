@@ -16,6 +16,8 @@ item_icon_name = "Coconut2D"
 [node name="Coconut" parent="." index="0"]
 material_override = ExtResource("2_8qer7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000762961, 0.0588608, -0.00158693)
 shape = SubResource("BoxShape3D_67cpi")
