@@ -5,19 +5,20 @@
 [ext_resource type="Material" uid="uid://cm12wr5xd8hut" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_fruit.tres" id="2_yirx7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sdaqf"]
-size = Vector3(0.0980988, 0.06604, 0.206726)
+size = Vector3(0.0441666, 0.0261841, 0.153793)
 
-[node name="banana" groups=["items"] instance=ExtResource("1_mt3k5")]
+[node name="banana" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_mt3k5")]
 transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, 0, 0, 0)
 script = ExtResource("2_sdaqf")
 item_name = "banana"
 item_icon_name = "Banana2D"
+item_area3d = NodePath("Area3D")
 
 [node name="Banana" parent="." index="0"]
 material_override = ExtResource("2_yirx7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="Area3D" type="Area3D" parent="." index="1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0195847, 0.0226441, -0.00656128)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0128298, 0.0194687, -0.00593924)
 shape = SubResource("BoxShape3D_sdaqf")

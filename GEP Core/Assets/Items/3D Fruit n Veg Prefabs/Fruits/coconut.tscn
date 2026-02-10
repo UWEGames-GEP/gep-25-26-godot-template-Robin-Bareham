@@ -5,19 +5,20 @@
 [ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_67cpi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_67cpi"]
-size = Vector3(0.145203, 0.135971, 0.13501)
+size = Vector3(0.0709687, 0.0669517, 0.0740357)
 
-[node name="coconut" groups=["items"] instance=ExtResource("1_1staw")]
+[node name="coconut" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_1staw")]
 transform = Transform3D(10.0744, 0, 0, 0, 10.0744, 0, 0, 0, 10.0744, 0, 0, 0)
 script = ExtResource("2_67cpi")
 item_name = "coconut"
 item_icon_name = "Coconut2D"
+item_area3d = NodePath("Area3D")
 
 [node name="Coconut" parent="." index="0"]
 material_override = ExtResource("2_8qer7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="Area3D" type="Area3D" parent="." index="1"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000762961, 0.0588608, -0.00158693)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000546916, 0.0542059, -0.00128517)
 shape = SubResource("BoxShape3D_67cpi")

@@ -5,17 +5,20 @@
 [ext_resource type="Material" uid="uid://b1y1q3s2q4i75" path="res://GEP Core/Assets/Items/Fruit 3D Assets/Materials/M_vegetable.tres" id="2_qqbdp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfe58"]
-size = Vector3(0.0439911, 0.0458374, 0.0454178)
+size = Vector3(0.0178947, 0.0318451, 0.00912523)
 
-[node name="broccoli" groups=["items"] instance=ExtResource("1_68pfd")]
+[node name="broccoli" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_68pfd")]
 transform = Transform3D(30.9198, 0, 0, 0, 30.9198, 0, 0, 0, 30.9198, 0, 0, 0)
 script = ExtResource("2_mfe58")
 item_name = "broccoli"
 item_icon_name = "Broccoli2D"
+item_area3d = NodePath("Area3D")
 
 [node name="Broccoli" parent="." index="0"]
 material_override = ExtResource("2_qqbdp")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000480644, 0.0203553, 0.0011711)
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000459679, 0.0186997, -6.55794e-05)
 shape = SubResource("BoxShape3D_mfe58")
