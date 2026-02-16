@@ -12,17 +12,21 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("pause")):
 		if(current_state == game_state.GAME):
 			current_state = game_state.PAUSE
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			$UserInterface/Pause.show()
 		elif(current_state == game_state.PAUSE):
 			current_state = game_state.GAME
+			Input.mouse_mode =Input.MOUSE_MODE_CONFINED_HIDDEN
 			$UserInterface/Pause.hide()
 	
 	if(Input.is_action_just_pressed("inventory")):
 		if(current_state == game_state.GAME):
 			current_state = game_state.INVENTORY
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			$UserInterface/Inventory.show()
 		elif(current_state == game_state.INVENTORY):
 			current_state = game_state.GAME
+			Input.mouse_mode =Input.MOUSE_MODE_CONFINED_HIDDEN
 			$UserInterface/Inventory.hide()
 			
 			
