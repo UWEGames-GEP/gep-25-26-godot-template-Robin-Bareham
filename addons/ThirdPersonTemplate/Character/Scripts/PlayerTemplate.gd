@@ -102,116 +102,119 @@ func _physics_process(delta):
 	#attack1()
 	#attack2()
 	#attack3()
-	sprint_and_roll()
 	
-	var on_floor = is_on_floor() # State control for is jumping/falling/landing
-	var h_rot = $Camroot/h.global_transform.basis.get_euler().y
+	if(Global.current_state == 1):
 	
-	movement_speed = 0
-	angular_acceleration = 10
-	acceleration = 15
-
-	# Gravity mechanics and prevent slope-sliding
-	if not is_on_floor(): 
-		vertical_velocity += Vector3.DOWN * gravity * 2 * delta
-	else: 
-		#vertical_velocity = -get_floor_normal() * gravity / 3
-		vertical_velocity = Vector3.DOWN * gravity / 10
-	
-	# Defining attack state: Add more attacks animations here as you add more!
-	if (attack1_node_name in playback.get_current_node()) or (attack2_node_name in playback.get_current_node()) or (rollattack_node_name in playback.get_current_node()) or (bigattack_node_name in playback.get_current_node()): 
-		is_attacking = true
-	else: 
-		is_attacking = false
-
-# Giving BigAttack some Slide
-	if bigattack_node_name in playback.get_current_node(): 
-		acceleration = 3
-
-	# Defining Roll state and limiting movment during rolls
-	if roll_node_name in playback.get_current_node(): 
-		is_rolling = true
-		acceleration = 2
-		angular_acceleration = 2
-	else: 
-		is_rolling = false
-	
-#	Jump input and Mechanics
-	if Input.is_action_just_pressed("jump") and ((is_attacking != true) and (is_rolling != true)) and is_on_floor():
-		vertical_velocity = Vector3.UP * jump_force
+		sprint_and_roll()
 		
-	# Movement input, state and mechanics. *Note: movement stops if attacking
-	if (Input.is_action_pressed("forward") ||  Input.is_action_pressed("backward") ||  Input.is_action_pressed("left") ||  Input.is_action_pressed("right")):
-		direction = Vector3(Input.get_action_strength("left") - Input.get_action_strength("right"),
-					0,
-					Input.get_action_strength("forward") - Input.get_action_strength("backward"))
-		direction = direction.rotated(Vector3.UP, h_rot).normalized()
-		is_walking = true
+		var on_floor = is_on_floor() # State control for is jumping/falling/landing
+		var h_rot = $Camroot/h.global_transform.basis.get_euler().y
 		
-		
-	# Sprint input, dash state and movement speed
-		if Input.is_action_pressed("sprint") and $DashTimer.is_stopped() and (is_walking == true ):
-			movement_speed = run_speed
-			is_running = true
-		else: # Walk State and speed
-			movement_speed = walk_speed
-			is_running = false
-	else: 
-		is_walking = false
-		is_running = false
-	
-#	if Input.is_action_pressed("aim"):  # Aim/Strafe input and  mechanics
-#		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, $Camroot/h.rotation.y, delta * angular_acceleration)
+		movement_speed = 0
+		angular_acceleration = 10
+		acceleration = 15
 
-#	else: # Normal turn movement mechanics
-	player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(direction.x, direction.z) - rotation.y, delta * angular_acceleration)
-	
-	# Movment mechanics with limitations during rolls/attacks
-	if ((is_attacking == true) or (is_rolling == true)): 
-		horizontal_velocity = horizontal_velocity.lerp(direction.normalized() * .01 , acceleration * delta)
-	else: # Movement mechanics without limitations 
-		horizontal_velocity = horizontal_velocity.lerp(direction.normalized() * movement_speed, acceleration * delta)
-	
-	# The Physics Sauce. Movement, gravity and velocity in a perfect dance.
-	velocity.z = horizontal_velocity.z + vertical_velocity.z
-	velocity.x = horizontal_velocity.x + vertical_velocity.x
-	velocity.y = vertical_velocity.y
-	
-	# CHECKS COLLISION WITH ITEMS
-	
-	for index in range(get_slide_collision_count()):
-		var collision = get_slide_collision(index)
-		#print_debug(get_tree().get_nodes_in_group("items").size())
-		#print_debug(get_slide_collision_count())
+		# Gravity mechanics and prevent slope-sliding
+		if not is_on_floor(): 
+			vertical_velocity += Vector3.DOWN * gravity * 2 * delta
+		else: 
+			#vertical_velocity = -get_floor_normal() * gravity / 3
+			vertical_velocity = Vector3.DOWN * gravity / 10
 		
-		if(collision.get_collider() == null):
-			continue
+		# Defining attack state: Add more attacks animations here as you add more!
+		if (attack1_node_name in playback.get_current_node()) or (attack2_node_name in playback.get_current_node()) or (rollattack_node_name in playback.get_current_node()) or (bigattack_node_name in playback.get_current_node()): 
+			is_attacking = true
+		else: 
+			is_attacking = false
+
+	# Giving BigAttack some Slide
+		if bigattack_node_name in playback.get_current_node(): 
+			acceleration = 3
+
+		# Defining Roll state and limiting movment during rolls
+		if roll_node_name in playback.get_current_node(): 
+			is_rolling = true
+			acceleration = 2
+			angular_acceleration = 2
+		else: 
+			is_rolling = false
+		
+	#	Jump input and Mechanics
+		if Input.is_action_just_pressed("jump") and ((is_attacking != true) and (is_rolling != true)) and is_on_floor():
+			vertical_velocity = Vector3.UP * jump_force
 			
-		if(collision.get_collider().is_in_group("items")):
-			print_debug("ITEMS AHOI")
-			var item = collision.get_collider()
-			if(Vector3.UP.dot(collision.get_normal()) > 0.1):
-				item.collected()
-				break
-	
-	
-	
-	
-	move_and_slide()
+		# Movement input, state and mechanics. *Note: movement stops if attacking
+		if (Input.is_action_pressed("forward") ||  Input.is_action_pressed("backward") ||  Input.is_action_pressed("left") ||  Input.is_action_pressed("right")):
+			direction = Vector3(Input.get_action_strength("left") - Input.get_action_strength("right"),
+						0,
+						Input.get_action_strength("forward") - Input.get_action_strength("backward"))
+			direction = direction.rotated(Vector3.UP, h_rot).normalized()
+			is_walking = true
+			
+			
+		# Sprint input, dash state and movement speed
+			if Input.is_action_pressed("sprint") and $DashTimer.is_stopped() and (is_walking == true ):
+				movement_speed = run_speed
+				is_running = true
+			else: # Walk State and speed
+				movement_speed = walk_speed
+				is_running = false
+		else: 
+			is_walking = false
+			is_running = false
+		
+	#	if Input.is_action_pressed("aim"):  # Aim/Strafe input and  mechanics
+	#		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, $Camroot/h.rotation.y, delta * angular_acceleration)
 
-	# ========= State machine controls =========
-	# The booleans of the on_floor, is_walking etc, trigger the 
-	# advanced conditions of the AnimationTree, controlling animation paths
-	
-	# on_floor manages jumps and falls
-	animation_tree["parameters/conditions/IsOnFloor"] = on_floor
-	animation_tree["parameters/conditions/IsInAir"] = !on_floor
-	# Moving and running respectively
-	animation_tree["parameters/conditions/IsWalking"] = is_walking
-	animation_tree["parameters/conditions/IsNotWalking"] = !is_walking
-	animation_tree["parameters/conditions/IsRunning"] = is_running
-	animation_tree["parameters/conditions/IsNotRunning"] = !is_running
-	# Attacks and roll don't use these boolean conditions, instead
-	# they use "travel" or "start" to one-shot their animations.
-	
+	#	else: # Normal turn movement mechanics
+		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(direction.x, direction.z) - rotation.y, delta * angular_acceleration)
+		
+		# Movment mechanics with limitations during rolls/attacks
+		if ((is_attacking == true) or (is_rolling == true)): 
+			horizontal_velocity = horizontal_velocity.lerp(direction.normalized() * .01 , acceleration * delta)
+		else: # Movement mechanics without limitations 
+			horizontal_velocity = horizontal_velocity.lerp(direction.normalized() * movement_speed, acceleration * delta)
+		
+		# The Physics Sauce. Movement, gravity and velocity in a perfect dance.
+		velocity.z = horizontal_velocity.z + vertical_velocity.z
+		velocity.x = horizontal_velocity.x + vertical_velocity.x
+		velocity.y = vertical_velocity.y
+		
+		# CHECKS COLLISION WITH ITEMS
+		
+		for index in range(get_slide_collision_count()):
+			var collision = get_slide_collision(index)
+			#print_debug(get_tree().get_nodes_in_group("items").size())
+			#print_debug(get_slide_collision_count())
+			
+			if(collision.get_collider() == null):
+				continue
+				
+			if(collision.get_collider().is_in_group("items")):
+				print_debug("ITEMS AHOI")
+				var item = collision.get_collider()
+				if(Vector3.UP.dot(collision.get_normal()) > 0.1):
+					item.collected()
+					break
+		
+		
+		
+		
+		move_and_slide()
+
+		# ========= State machine controls =========
+		# The booleans of the on_floor, is_walking etc, trigger the 
+		# advanced conditions of the AnimationTree, controlling animation paths
+		
+		# on_floor manages jumps and falls
+		animation_tree["parameters/conditions/IsOnFloor"] = on_floor
+		animation_tree["parameters/conditions/IsInAir"] = !on_floor
+		# Moving and running respectively
+		animation_tree["parameters/conditions/IsWalking"] = is_walking
+		animation_tree["parameters/conditions/IsNotWalking"] = !is_walking
+		animation_tree["parameters/conditions/IsRunning"] = is_running
+		animation_tree["parameters/conditions/IsNotRunning"] = !is_running
+		# Attacks and roll don't use these boolean conditions, instead
+		# they use "travel" or "start" to one-shot their animations.
+		
 	

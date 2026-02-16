@@ -19,7 +19,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _input(event):
-	if event is InputEventMouseMotion:
+	if (event is InputEventMouseMotion && Global.current_state == 1):
 	
 		camrot_h += -event.relative.x * h_sensitivity * 0.65
 		camrot_v += event.relative.y * v_sensitivity * 0.65
@@ -35,18 +35,20 @@ func _input(event):
 func _physics_process(delta):
 	# JoyPad Controls
 	#_joystick_input()
-		
-	camrot_v = clamp(camrot_v, deg_to_rad(cam_v_min), deg_to_rad(cam_v_max))
-
-	#var mesh_front = player_mesh.global_transform.basis.z
-	#var auto_rotate_speed =  (PI - mesh_front.angle_to($pivot.global_transform.basis.z)) * get_parent().horizontal_velocity.length() * rot_speed_multiplier
 	
-#	if $control_stay_delay.is_stopped():
-#		#FOLLOW CAMERA
-#		$pivot.rotation.y = lerp_angle($pivot.rotation.y, get_node(PlayerCharacterMesh).global_transform.basis.get_euler().y, delta )
-#		camrot_h = $pivot.rotation_degrees.y
-#	else:
-#		#MOUSE CAMERA
-	$h.rotation.y = lerpf($h.rotation.y, camrot_h, delta * h_acceleration)
-	$h/v.rotation.x = lerpf($h/v.rotation.x, camrot_v, delta * v_acceleration)
+	if(Global.current_state == 1):
+	
+		camrot_v = clamp(camrot_v, deg_to_rad(cam_v_min), deg_to_rad(cam_v_max))
+
+		#var mesh_front = player_mesh.global_transform.basis.z
+		#var auto_rotate_speed =  (PI - mesh_front.angle_to($pivot.global_transform.basis.z)) * get_parent().horizontal_velocity.length() * rot_speed_multiplier
+		
+	#	if $control_stay_delay.is_stopped():
+	#		#FOLLOW CAMERA
+	#		$pivot.rotation.y = lerp_angle($pivot.rotation.y, get_node(PlayerCharacterMesh).global_transform.basis.get_euler().y, delta )
+	#		camrot_h = $pivot.rotation_degrees.y
+	#	else:
+	#		#MOUSE CAMERA
+		$h.rotation.y = lerpf($h.rotation.y, camrot_h, delta * h_acceleration)
+		$h/v.rotation.x = lerpf($h/v.rotation.x, camrot_v, delta * v_acceleration)
 	
