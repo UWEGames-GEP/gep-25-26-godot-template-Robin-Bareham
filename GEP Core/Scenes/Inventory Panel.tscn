@@ -21,13 +21,22 @@ texture = ExtResource("1_cif8a")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+clip_contents = true
 custom_minimum_size = Vector2(130, 130)
-layout_mode = 0
-offset_right = 130.0
-offset_bottom = 129.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="CenterContainer"]
 layout_mode = 2
 
 [node name="item_icon" type="Sprite2D" parent="CenterContainer/Panel"]
-position = Vector2(-65, -64)

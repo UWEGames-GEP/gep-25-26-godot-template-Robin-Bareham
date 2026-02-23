@@ -17,6 +17,7 @@ func _ready():
 
 func _inventory_opened():
 	#Go through list of objects and whats invisble
+	item_list = []
 	for i in object_list.size():
 		if object_list[i]._get_inventory_active():
 			item_list.append(object_list[i]._get_icon_name())
@@ -35,8 +36,11 @@ func _inventory_opened():
 	pass
 
 
+func _add_item(item):
+	item_list.append(item)
 
-
+func _remove_item(item):
+	item_list.remove(item)
 
 func _get_item_list():
 	return item_list

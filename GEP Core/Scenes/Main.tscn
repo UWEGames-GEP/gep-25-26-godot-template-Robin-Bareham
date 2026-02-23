@@ -218,6 +218,7 @@ theme_override_font_sizes/font_size = 80
 text = "PAUSED"
 
 [node name="Inventory" type="ColorRect" parent="UserInterface"]
+visible = false
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 1
 anchors_preset = 15
@@ -320,4 +321,8 @@ item_node = NodePath(".")
 
 [node name="watermelon" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("26_0edyv")]
 transform = Transform3D(7.0795, 0, 0, 0, 7.0795, 0, 0, 0, 7.0795, 8.9802, 0.194999, -18.987)
+item_node = NodePath(".")
+
+[node name="apple2" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("12_wt3ry")]
+transform = Transform3D(8.60936, 0, 0, 0, 8.60936, 0, 0, 0, 8.60936, 3.24011, 0.195138, -21.7046)
 item_node = NodePath(".")
