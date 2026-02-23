@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://2my1lepx3t0o"]
+
+[ext_resource type="Texture2D" uid="uid://b6b517iao8hpx" path="res://GEP Core/Assets/Inventory Panel.png" id="1_cif8a"]
+[ext_resource type="Script" uid="uid://ct28ybrlbup7d" path="res://GEP Core/Scripts/inventory_panel.gd" id="1_ru3ff"]
+
+[node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(130, 130)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1022.0
+offset_bottom = -518.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ru3ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("1_cif8a")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(130, 130)
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 129.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_icon" type="Sprite2D" parent="CenterContainer/Panel"]
+position = Vector2(-65, -64)

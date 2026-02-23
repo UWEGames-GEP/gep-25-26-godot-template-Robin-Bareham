@@ -23,14 +23,10 @@ func _process(delta: float) -> void:
 	if(item_area3d.get_overlapping_bodies().size() > 0 && item_node.is_visible_in_tree()):
 		print_debug("ITEM GOT")
 		item_node.visible = false
-
+		inventory_active = true
 		
+func _get_icon_name():
+	return item_icon_name
 	
-
-signal collected
-
-func collect():
-	collected.emit()
-	print_debug("ITEM GOT")
-	inventory_active = true
-	
+func _get_inventory_active():
+	return inventory_active
