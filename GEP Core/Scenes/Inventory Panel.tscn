@@ -55,3 +55,6 @@ mouse_filter = 2
 
 [node name="item_icon" type="Sprite2D" parent="Button/CenterContainer"]
 position = Vector2(65, 65)
+
+[connection signal="item_removal" from="." to="." method="_on_item_removal"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

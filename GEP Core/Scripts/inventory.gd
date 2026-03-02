@@ -1,11 +1,12 @@
 extends ColorRect
 
+#@export var inventory_panel_scene: PackedScene
 @onready var inventory_slots: Array = $NinePatchRect/GridContainer.get_children()
 
 var item_list = [] #For what items are active in the inventory
 var object_list = [] #For all objects in overworld
 var icon_list = [] #For all icons linked to objects
-
+#signal remove_item_signal
 
 func _ready():
 	#Add objects from tree into object list
@@ -13,7 +14,10 @@ func _ready():
 	#Gets the icons of each object for the inventory
 	for i in object_list.size():
 		icon_list.append(object_list[i]._get_icon_name())
-	pass
+	#Connects signals for removing items
+	for i in inventory_slots.size():
+		inventory_slots[i].get_node("Button").pressed.connect(_on_any_button_pressed.bind())
+	#remove_item_signal.connect(_on_removing_item)
 
 func _inventory_opened():
 	#Go through list of objects and whats invisble
@@ -30,9 +34,15 @@ func _inventory_opened():
 	#var current_inv_slot = 0
 	for i in item_list.size():
 		var texture_location = "res://GEP Core/Assets/Buttons/Item Icons/" + item_list[i] + ".png"
-		inventory_slots[i]._change_item_texture(texture_location)
+		inventory_slots[i]._change_item_texture(texture_location,item_list[i])
 	pass
 
+
+func _on_any_button_pressed():
+	
+	print_debug("Pressed")
+	#_remove_item(pressed_item)
+	#_inventory_opened()
 
 func _add_item(item):
 	item_list.append(item)

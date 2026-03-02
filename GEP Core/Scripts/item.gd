@@ -25,6 +25,10 @@ func _process(delta: float) -> void:
 		item_node.visible = false
 		inventory_active = true
 		
+func _reactivate_item():
+	item_node.visible = true
+	inventory_active = false
+
 func _get_icon_name():
 	return item_icon_name
 	

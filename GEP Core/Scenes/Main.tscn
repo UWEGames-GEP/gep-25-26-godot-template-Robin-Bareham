@@ -329,3 +329,5 @@ item_node = NodePath(".")
 [node name="apple2" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("12_wt3ry")]
 transform = Transform3D(8.60936, 0, 0, 0, 8.60936, 0, 0, 0, 8.60936, 3.24011, 0.195138, -21.7046)
 item_node = NodePath(".")
+
+[connection signal="item_removal" from="UserInterface/Inventory/NinePatchRect/GridContainer/Panel1" to="UserInterface/Inventory" method="_on_panel_1_item_removal"]
