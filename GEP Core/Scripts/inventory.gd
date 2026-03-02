@@ -31,8 +31,6 @@ func _inventory_opened():
 	for i in item_list.size():
 		var texture_location = "res://GEP Core/Assets/Buttons/Item Icons/" + item_list[i] + ".png"
 		inventory_slots[i]._change_item_texture(texture_location)
-	
-	
 	pass
 
 

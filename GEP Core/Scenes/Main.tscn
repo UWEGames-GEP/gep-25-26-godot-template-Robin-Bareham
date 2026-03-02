@@ -198,6 +198,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.431373)
 
 [node name="PauseText" type="Label" parent="UserInterface/Pause"]
@@ -227,6 +228,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 0.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.360784)
 script = ExtResource("12_7a1vd")
 
@@ -258,6 +260,7 @@ offset_right = 342.5
 offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 columns = 5
 
 [node name="Panel1" parent="UserInterface/Inventory/NinePatchRect/GridContainer" instance=ExtResource("14_tv4n6")]

@@ -36,9 +36,3 @@ func _physics_process(delta):
 			$UserInterface/Inventory.hide()
 			
 			
-	#Colliding with an object
-	#for i in item_scene.items._get_item_list().size(): 
-		##Checks if Player is colliding with items.
-		##If they are, add item.
-		#pass
-	
