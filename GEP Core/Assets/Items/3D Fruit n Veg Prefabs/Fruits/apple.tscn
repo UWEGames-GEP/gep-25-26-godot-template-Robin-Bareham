@@ -7,12 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_wmdh8"]
 size = Vector3(1, 0.233398, 1)
 
-[node name="apple" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_yecgm")]
+[node name="apple" node_paths=PackedStringArray("item_area3d", "item_node") groups=["items"] instance=ExtResource("1_yecgm")]
 transform = Transform3D(8.60936, 0, 0, 0, 8.60936, 0, 0, 0, 8.60936, 0, 0, 0)
 script = ExtResource("2_wr0gj")
-item_name = "apple"
 item_icon_name = "Apple2D"
 item_area3d = NodePath("Area3D")
+item_node = NodePath(".")
 
 [node name="Apple" parent="." index="0"]
 material_override = ExtResource("2_uc4hc")

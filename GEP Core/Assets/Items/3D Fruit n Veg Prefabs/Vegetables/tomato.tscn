@@ -7,12 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_truli"]
 size = Vector3(0.0578317, 0.0384216, 0.0507393)
 
-[node name="tomato" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_xdyu8")]
+[node name="tomato" node_paths=PackedStringArray("item_area3d", "item_node") groups=["items"] instance=ExtResource("1_xdyu8")]
 transform = Transform3D(12.6947, 0, 0, 0, 12.6947, 0, 0, 0, 12.6947, 0, 0, 0)
 script = ExtResource("2_truli")
-item_name = "tomato"
 item_icon_name = "Tomato2D"
 item_area3d = NodePath("Area3D")
+item_node = NodePath(".")
 
 [node name="Tomato" parent="." index="0"]
 material_override = ExtResource("2_30olm")

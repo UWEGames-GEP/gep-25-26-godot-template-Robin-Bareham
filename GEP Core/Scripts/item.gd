@@ -1,19 +1,12 @@
 #@tool
 extends Node3D
 
-@export var item_name = "NULL"
+#@export var item_name = "NULL"
 @export var item_icon_name = "NULL"
 @export var item_area3d: Area3D
 @export var item_node: Node3D
 
 var inventory_active = false
-
-#_ready is the awake function
-func _ready():
-	pass
-
-func _on_item_area3d_body_enter():
-	pass
 
 #_process is update() function
 func _process(delta: float) -> void:

@@ -7,12 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_i6eqv"]
 size = Vector3(0.0138474, 0.0139465, 0.164681)
 
-[node name="carrot" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_fol3v")]
+[node name="carrot" node_paths=PackedStringArray("item_area3d", "item_node") groups=["items"] instance=ExtResource("1_fol3v")]
 transform = Transform3D(10.1639, 0, 0, 0, 10.1639, 0, 0, 0, 10.1639, 0, 0, 0)
 script = ExtResource("2_i6eqv")
-item_name = "carrot"
 item_icon_name = "Carrot2D"
 item_area3d = NodePath("Area3D")
+item_node = NodePath(".")
 
 [node name="Carrot" parent="." index="0"]
 material_override = ExtResource("2_r606f")

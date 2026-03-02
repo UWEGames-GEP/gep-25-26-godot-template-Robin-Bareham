@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=27 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Script" uid="uid://c5dqp7ciiqfxl" path="res://GEP Core/Scripts/main.gd" id="1_nj1m4"]
 [ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_5x4se"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bpvj4gq161mlj" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/lemon.tscn" id="13_qr3ta"]
 [ext_resource type="PackedScene" uid="uid://dctx7sbnoqhyc" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/banana.tscn" id="13_wt3ry"]
 [ext_resource type="PackedScene" uid="uid://2my1lepx3t0o" path="res://GEP Core/Scenes/Inventory Panel.tscn" id="14_tv4n6"]
+[ext_resource type="PackedScene" uid="uid://mm84upwiu3pr" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Vegetables/potato.tscn" id="19_usxcr"]
 [ext_resource type="PackedScene" uid="uid://djc5c1oyajhky" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/watermelon.tscn" id="26_0edyv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ayri"]
@@ -310,24 +311,22 @@ layout_mode = 2
 
 [node name="Items" type="Node3D" parent="."]
 
-[node name="apple" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("12_wt3ry")]
+[node name="apple" parent="Items" instance=ExtResource("12_wt3ry")]
 transform = Transform3D(22.2861, 0, 0, 0, 22.2861, 0, 0, 0, 22.2861, 6.06755, -0.223648, -15.7655)
-item_node = NodePath(".")
 
-[node name="banana" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("13_wt3ry")]
+[node name="banana" parent="Items" instance=ExtResource("13_wt3ry")]
 transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, 9.43527, 0.438058, -21.4188)
-item_node = NodePath(".")
 
-[node name="lemon" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("13_qr3ta")]
+[node name="lemon" parent="Items" instance=ExtResource("13_qr3ta")]
 transform = Transform3D(17.3898, 0, 0, 0, 17.3898, 0, 0, 0, 17.3898, 6.71235, 0.19497, -22.7168)
-item_node = NodePath(".")
 
-[node name="watermelon" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("26_0edyv")]
+[node name="watermelon" parent="Items" instance=ExtResource("26_0edyv")]
 transform = Transform3D(7.0795, 0, 0, 0, 7.0795, 0, 0, 0, 7.0795, 8.9802, 0.194999, -18.987)
-item_node = NodePath(".")
 
-[node name="apple2" parent="Items" node_paths=PackedStringArray("item_node") instance=ExtResource("12_wt3ry")]
+[node name="apple2" parent="Items" instance=ExtResource("12_wt3ry")]
 transform = Transform3D(8.60936, 0, 0, 0, 8.60936, 0, 0, 0, 8.60936, 3.24011, 0.195138, -21.7046)
-item_node = NodePath(".")
+
+[node name="potato" parent="Items" instance=ExtResource("19_usxcr")]
+transform = Transform3D(12.2784, 0, 0, 0, 12.2784, 0, 0, 0, 12.2784, 0.467937, 0.194927, -14.9502)
 
 [connection signal="item_removal" from="UserInterface/Inventory/NinePatchRect/GridContainer/Panel1" to="UserInterface/Inventory" method="_on_panel_1_item_removal"]

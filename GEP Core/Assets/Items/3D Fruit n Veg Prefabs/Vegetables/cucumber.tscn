@@ -7,12 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_tmio1"]
 size = Vector3(0.0304222, 0.0236206, 0.205963)
 
-[node name="cucumber" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_3akyu")]
+[node name="cucumber" node_paths=PackedStringArray("item_area3d", "item_node") groups=["items"] instance=ExtResource("1_3akyu")]
 transform = Transform3D(7.56665, 0, 0, 0, 7.56665, 0, 0, 0, 7.56665, 0, 0, 0)
 script = ExtResource("2_tmio1")
-item_name = "cucumber"
 item_icon_name = "Cucumber2D"
 item_area3d = NodePath("Area3D")
+item_node = NodePath(".")
 
 [node name="Cucumber" parent="." index="0"]
 material_override = ExtResource("2_rljun")

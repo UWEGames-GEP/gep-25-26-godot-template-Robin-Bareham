@@ -7,12 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ojn3g"]
 size = Vector3(0.0401611, 0.0430908, 0.060913)
 
-[node name="lemon" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_k6v8h")]
+[node name="lemon" node_paths=PackedStringArray("item_area3d", "item_node") groups=["items"] instance=ExtResource("1_k6v8h")]
 transform = Transform3D(17.3898, 0, 0, 0, 17.3898, 0, 0, 0, 17.3898, 0, 0, 0)
 script = ExtResource("2_ojn3g")
-item_name = "lemon"
 item_icon_name = "Lemon2D"
 item_area3d = NodePath("Area3D")
+item_node = NodePath(".")
 
 [node name="Lemon" parent="." index="0"]
 material_override = ExtResource("2_bgvoi")

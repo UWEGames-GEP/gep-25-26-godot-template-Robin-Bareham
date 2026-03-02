@@ -7,12 +7,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_mfe58"]
 size = Vector3(0.0178947, 0.0318451, 0.00912523)
 
-[node name="broccoli" node_paths=PackedStringArray("item_area3d") groups=["items"] instance=ExtResource("1_68pfd")]
+[node name="broccoli" node_paths=PackedStringArray("item_area3d", "item_node") groups=["items"] instance=ExtResource("1_68pfd")]
 transform = Transform3D(30.9198, 0, 0, 0, 30.9198, 0, 0, 0, 30.9198, 0, 0, 0)
 script = ExtResource("2_mfe58")
-item_name = "broccoli"
 item_icon_name = "Broccoli2D"
 item_area3d = NodePath("Area3D")
+item_node = NodePath(".")
 
 [node name="Broccoli" parent="." index="0"]
 material_override = ExtResource("2_qqbdp")
