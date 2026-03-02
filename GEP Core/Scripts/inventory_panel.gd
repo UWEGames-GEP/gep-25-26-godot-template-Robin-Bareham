@@ -19,8 +19,3 @@ func _on_button_pressed() -> void:
 	if(item_visible):
 		_hide_item()
 		item_removal.emit(current_item)
-
-
-func _on_item_removal(item: Variant) -> void:
-	print_debug(item)
-	pass # Replace with function body.

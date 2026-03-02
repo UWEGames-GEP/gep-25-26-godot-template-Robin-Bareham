@@ -16,7 +16,7 @@ func _ready():
 		icon_list.append(object_list[i]._get_icon_name())
 	#Connects signals for removing items
 	for i in inventory_slots.size():
-		inventory_slots[i].get_node("Button").pressed.connect(_on_any_button_pressed.bind())
+		inventory_slots[i].item_removal.connect(_on_removing_item)
 	#remove_item_signal.connect(_on_removing_item)
 
 func _inventory_opened():
@@ -38,17 +38,22 @@ func _inventory_opened():
 	pass
 
 
-func _on_any_button_pressed():
+func _on_removing_item(item: Variant):
+	_remove_item(item)
+	_inventory_opened()
 	
-	print_debug("Pressed")
-	#_remove_item(pressed_item)
-	#_inventory_opened()
-
-func _add_item(item):
-	item_list.append(item)
-
 func _remove_item(item):
-	item_list.remove(item)
+	#Find and remove item from inventory list
+	for i in item_list.size():
+		if (item_list[i] == item):
+			item_list.remove_at(i)
+			break
+	#find and replace item's real world object
+	for i in object_list.size():
+		if (object_list[i]._get_inventory_active() && object_list[i]._get_icon_name() == item):
+			object_list[i]._reactivate_item()
+			break
+	
 
 func _get_item_list():
 	return item_list
