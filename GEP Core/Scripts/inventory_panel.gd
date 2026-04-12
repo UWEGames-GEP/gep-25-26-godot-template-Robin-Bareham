@@ -12,16 +12,19 @@ func _change_item_texture(new_texture, item_name):
 	item_button.set_button_icon(load(new_texture))
 	current_item = item_name
 	item_visible = true
+	item_counter.visible = true
 	counter_num = 1
 	item_counter.text = str(counter_num)
 	
 func _keep_item_texture(new_texture):
 	item_visible = true
+	item_counter.visible = true
 	item_button.set_button_icon(load(new_texture))
 	
 func _hide_item():
 	item_button.set_button_icon(load("res://GEP Core/Assets/Buttons/TransparentBtn.png"))
 	item_visible = false
+	item_counter.visible = false
 	counter_num = 0
 	item_counter.text = str(counter_num)
 
