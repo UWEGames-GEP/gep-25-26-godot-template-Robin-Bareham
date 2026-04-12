@@ -34,10 +34,10 @@ func _inventory_opened():
 	#Goes through list activating buttons	
 	#var current_inv_slot = 0
 	for i in item_list.size() : #Goes through each item collected
-		print_debug("Current Item: ", item_list[i])
+	#	print_debug("Current Item: ", item_list[i])
 		for a in inventory_slots.size(): #Goes through all the panels
 			var texture_location = "res://GEP Core/Assets/Buttons/Item Icons/" + item_list[i] + ".png"
-			print_debug(a, " ", inventory_slots[a]._get_current_item())
+	#		print_debug(a, " ", inventory_slots[a]._get_current_item())
 			if(inventory_slots[a]._get_current_item() == "Null"):
 				inventory_slots[a]._change_item_texture(texture_location,item_list[i])
 				break
@@ -46,7 +46,7 @@ func _inventory_opened():
 				inventory_slots[a]._increase_counter_num()
 				inventory_slots[a]._keep_item_texture(texture_location);
 				break			
-	print_debug(" END OF SORTING ")
+	#print_debug(" END OF SORTING ")
 	pass
 
 

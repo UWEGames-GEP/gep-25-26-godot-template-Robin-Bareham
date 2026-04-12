@@ -181,6 +181,12 @@ func _physics_process(delta):
 		velocity.y = vertical_velocity.y
 		
 		move_and_slide()
+		
+		#Changing direction and position of player for reference of placing objects
+		Global.player_direction = direction
+		Global.player_position = global_transform.origin
+		#print_debug("Player Direction: ", Global.player_direction.x, " Player Direction: ", Global.player_direction.z )
+		#print_debug("Player POS: ", Global.player_position.x, "Player POS: ", Global.player_position.z)
 
 		# ========= State machine controls =========
 		# The booleans of the on_floor, is_walking etc, trigger the 
