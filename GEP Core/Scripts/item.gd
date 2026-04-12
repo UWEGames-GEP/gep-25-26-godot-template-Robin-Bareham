@@ -12,7 +12,7 @@ var inventory_active = false
 func _process(delta: float) -> void:
 	
 	#print_debug(item_area3d.get_overlapping_bodies().size())
-	
+	# If the object sense it being overlapped with the body.
 	if(item_area3d.get_overlapping_bodies().size() > 0 && item_node.is_visible_in_tree()):
 		item_node.visible = false
 		inventory_active = true

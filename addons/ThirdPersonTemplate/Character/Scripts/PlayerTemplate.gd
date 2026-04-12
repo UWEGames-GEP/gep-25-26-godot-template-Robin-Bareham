@@ -180,26 +180,6 @@ func _physics_process(delta):
 		velocity.x = horizontal_velocity.x + vertical_velocity.x
 		velocity.y = vertical_velocity.y
 		
-		# CHECKS COLLISION WITH ITEMS
-		
-		for index in range(get_slide_collision_count()):
-			var collision = get_slide_collision(index)
-			#print_debug(get_tree().get_nodes_in_group("items").size())
-			#print_debug(get_slide_collision_count())
-			
-			if(collision.get_collider() == null):
-				continue
-				
-			if(collision.get_collider().is_in_group("items")):
-				print_debug("ITEMS AHOI")
-				var item = collision.get_collider()
-				if(Vector3.UP.dot(collision.get_normal()) > 0.1):
-					item.collected()
-					break
-		
-		
-		
-		
 		move_and_slide()
 
 		# ========= State machine controls =========

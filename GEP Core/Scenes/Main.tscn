@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=22 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Script" uid="uid://c5dqp7ciiqfxl" path="res://GEP Core/Scripts/main.gd" id="1_nj1m4"]
-[ext_resource type="Script" uid="uid://ura6obv6ou8x" path="res://GEP Core/Scripts/item.gd" id="2_5x4se"]
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="2_njqjn"]
 [ext_resource type="Material" uid="uid://c1u020xb37y6n" path="res://addons/ThirdPersonTemplate/Environments/Materials/Blue.material" id="3_5x4se"]
 [ext_resource type="Material" uid="uid://bly25nr0aqsv3" path="res://addons/ThirdPersonTemplate/Environments/Materials/BlueGrid.material" id="4_g25g5"]
@@ -19,26 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://2my1lepx3t0o" path="res://GEP Core/Scenes/Inventory Panel.tscn" id="14_tv4n6"]
 [ext_resource type="PackedScene" uid="uid://mm84upwiu3pr" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Vegetables/potato.tscn" id="19_usxcr"]
 [ext_resource type="PackedScene" uid="uid://djc5c1oyajhky" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/watermelon.tscn" id="26_0edyv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ayri"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_4ayri"]
-resource_local_to_scene = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ev8d6"]
-
-[sub_resource type="PackedScene" id="PackedScene_g25g5"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("Item", "collision_layer", "collision_mask", "script", "items", "CharacterBody3D", "Pivot", "Node3D", "ItemMesh", "transform", "material_override", "mesh", "MeshInstance3D", "ItemCollision", "shape", "CollisionShape3D"),
-"node_count": 4,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 5, 0, -1, 3, 1, 0, 2, 1, 3, 2, 1, 4, 0, 0, 7, 6, -1, 0, 0, 1, 0, 12, 8, -1, 3, 9, 3, 10, 4, 11, 5, 0, 0, 0, 15, 13, -1, 1, 14, 6, 0),
-"variants": [2, 0, ExtResource("2_5x4se"), Transform3D(6.97733, 0, 0, 0, 6.97733, 0, 0, 0, 6.97733, 0, 0, 0), SubResource("StandardMaterial3D_4ayri"), SubResource("BoxMesh_4ayri"), SubResource("BoxShape3D_ev8d6")],
-"version": 3
-}
 
 [sub_resource type="Environment" id="Environment_qyvd4"]
 background_mode = 2
@@ -58,7 +37,6 @@ default_font_size = 20
 [node name="Main" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, 0.163605)
 script = ExtResource("1_nj1m4")
-item_scene = SubResource("PackedScene_g25g5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.892271, -0.274443, 0.358516, 2.02684e-08, 0.794054, 0.607847, -0.451501, 0.542364, -0.708511, 0, 2.76815, 9.26053)
@@ -328,5 +306,8 @@ transform = Transform3D(8.60936, 0, 0, 0, 8.60936, 0, 0, 0, 8.60936, 3.24011, 0.
 
 [node name="potato" parent="Items" instance=ExtResource("19_usxcr")]
 transform = Transform3D(12.2784, 0, 0, 0, 12.2784, 0, 0, 0, 12.2784, 0.467937, 0.194927, -14.9502)
+
+[node name="banana" parent="." instance=ExtResource("13_wt3ry")]
+transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, 4.11918, 0.19482, -18.8782)
 
 [connection signal="item_removal" from="UserInterface/Inventory/NinePatchRect/GridContainer/Panel1" to="UserInterface/Inventory" method="_on_panel_1_item_removal"]

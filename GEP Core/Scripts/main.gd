@@ -1,11 +1,6 @@
 extends Node3D
 
-@export var item_scene: PackedScene
 @onready var inventory_script: ColorRect = $UserInterface/Inventory
-# UI States information
-#enum game_state {PAUSE,GAME,INVENTORY}
-#var current_state = game_state.GAME
-#var previous_state = game_state.GAME
 
 func _physics_process(delta):
 	 

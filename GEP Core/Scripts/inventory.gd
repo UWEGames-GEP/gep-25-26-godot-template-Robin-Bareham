@@ -24,26 +24,45 @@ func _inventory_opened():
 	item_list = []
 	for i in object_list.size():
 		if object_list[i]._get_inventory_active():
-			item_list.append(object_list[i]._get_icon_name())
+			item_list.append(object_list[i]._get_icon_name())			
 			
 	#Turn all pngs invisible
 	for i in inventory_slots.size():
 		inventory_slots[i]._hide_item()
+		inventory_slots[i]._reset_panel()
 		
 	#Goes through list activating buttons	
 	#var current_inv_slot = 0
-	for i in item_list.size():
-		var texture_location = "res://GEP Core/Assets/Buttons/Item Icons/" + item_list[i] + ".png"
-		inventory_slots[i]._change_item_texture(texture_location,item_list[i])
+	for i in item_list.size() : #Goes through each item collected
+		print_debug("Current Item: ", item_list[i])
+		for a in inventory_slots.size(): #Goes through all the panels
+			var texture_location = "res://GEP Core/Assets/Buttons/Item Icons/" + item_list[i] + ".png"
+			print_debug(a, " ", inventory_slots[a]._get_current_item())
+			if(inventory_slots[a]._get_current_item() == "Null"):
+				inventory_slots[a]._change_item_texture(texture_location,item_list[i])
+				break
+			#If the item has a same item already in there increase the count
+			if (inventory_slots[a]._get_current_item() == item_list[i]):
+				inventory_slots[a]._increase_counter_num()
+				inventory_slots[a]._keep_item_texture(texture_location);
+				break			
+	print_debug(" END OF SORTING ")
 	pass
 
 
-func _on_removing_item(item: Variant):
-	_remove_item(item)
-	_inventory_opened()
+func _on_removing_item(item: Variant, count: Variant):
+	if(count > 0):
+		_remove_item(item)
+	else:
+		for a in inventory_slots.size():
+			if(inventory_slots[a]._get_current_item() == item):
+				inventory_slots[a]._reset_panel()
+		_remove_item(item)
+		_inventory_opened()
+		
 	
 func _remove_item(item):
-	#Find and remove item from inventory list
+		#Find and remove item from inventory list
 	for i in item_list.size():
 		if (item_list[i] == item):
 			item_list.remove_at(i)
