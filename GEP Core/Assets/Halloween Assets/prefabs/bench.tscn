@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk4rtornm1usd"]
+
+[ext_resource type="PackedScene" uid="uid://cr33c3kk3puyx" path="res://GEP Core/Assets/Halloween Assets/gltf/bench.gltf" id="1_u2t3p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ys4fw"]
+size = Vector3(1.90137, 0.505859, 0.757446)
+
+[node name="Bench" type="Node3D"]
+
+[node name="bench2" parent="." instance=ExtResource("1_u2t3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294075, 0, 0.111685)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289003, 0.2656, 0.114907)
+shape = SubResource("BoxShape3D_ys4fw")

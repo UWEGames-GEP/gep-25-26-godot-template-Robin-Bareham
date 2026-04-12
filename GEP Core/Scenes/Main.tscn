@@ -1,21 +1,29 @@
-[gd_scene load_steps=22 format=3 uid="uid://ngecyo0pmaed"]
+[gd_scene load_steps=31 format=3 uid="uid://ngecyo0pmaed"]
 
 [ext_resource type="Script" uid="uid://c5dqp7ciiqfxl" path="res://GEP Core/Scripts/main.gd" id="1_nj1m4"]
 [ext_resource type="Sky" uid="uid://cbbdl23q60wak" path="res://addons/ThirdPersonTemplate/Environments/SkyBox.res" id="2_njqjn"]
 [ext_resource type="Material" uid="uid://c1u020xb37y6n" path="res://addons/ThirdPersonTemplate/Environments/Materials/Blue.material" id="3_5x4se"]
+[ext_resource type="Texture2D" uid="uid://coi5e7tqpfpe" path="res://GEP Core/Assets/free-seamless-grass-texture-26.png" id="4_43ivi"]
 [ext_resource type="Material" uid="uid://bly25nr0aqsv3" path="res://addons/ThirdPersonTemplate/Environments/Materials/BlueGrid.material" id="4_g25g5"]
-[ext_resource type="Material" uid="uid://d3up41bo0vjj0" path="res://addons/ThirdPersonTemplate/Environments/Materials/OrangeGrid.material" id="5_wt3ry"]
-[ext_resource type="Material" uid="uid://ddpgp1pyklffr" path="res://addons/ThirdPersonTemplate/Environments/Materials/GreenGrid.material" id="6_qr3ta"]
-[ext_resource type="Material" uid="uid://cpk3jtowelhgh" path="res://addons/ThirdPersonTemplate/Environments/Materials/PingkGrid.material" id="7_2rqs0"]
-[ext_resource type="Material" uid="uid://bquocw2a8n271" path="res://addons/ThirdPersonTemplate/Environments/Materials/GreyGrid.material" id="8_l0loc"]
+[ext_resource type="PackedScene" uid="uid://buyscn8khfmf8" path="res://GEP Core/Assets/Halloween Assets/prefabs/archway.tscn" id="6_2rqs0"]
+[ext_resource type="PackedScene" uid="uid://caxr1dibeyooq" path="res://GEP Core/Assets/Medeval/prefabs/market_stall.tscn" id="7_tv4n6"]
 [ext_resource type="PackedScene" uid="uid://c75s2m6eic1vo" path="res://addons/ThirdPersonTemplate/Character/Nodes/PlayerTemplate.tscn" id="9_tv4n6"]
+[ext_resource type="PackedScene" uid="uid://f3vo4uco2bn1" path="res://GEP Core/Assets/Medeval/prefabs/barrles.tscn" id="9_usxcr"]
 [ext_resource type="FontFile" uid="uid://ckcmp1hno3ms7" path="res://GEP Core/Assets/Fonts/LiberationSans.ttf" id="10_usxcr"]
+[ext_resource type="PackedScene" uid="uid://bk4rtornm1usd" path="res://GEP Core/Assets/Halloween Assets/prefabs/bench.tscn" id="11_j1tug"]
+[ext_resource type="PackedScene" uid="uid://cs201b51n04g0" path="res://GEP Core/Assets/Halloween Assets/prefabs/statue.tscn" id="12_0edyv"]
 [ext_resource type="Script" uid="uid://candmqdkshocs" path="res://GEP Core/Scripts/inventory.gd" id="12_7a1vd"]
 [ext_resource type="PackedScene" uid="uid://bplbhlq6jqjtj" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/apple.tscn" id="12_wt3ry"]
+[ext_resource type="PackedScene" uid="uid://dqs8bvya7ftb0" path="res://GEP Core/Assets/Halloween Assets/gltf/path_A.gltf" id="13_0qwuy"]
 [ext_resource type="Texture2D" uid="uid://cnnshjuj22gqw" path="res://GEP Core/Assets/Inventory BG.png" id="13_l0loc"]
 [ext_resource type="PackedScene" uid="uid://bpvj4gq161mlj" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/lemon.tscn" id="13_qr3ta"]
 [ext_resource type="PackedScene" uid="uid://dctx7sbnoqhyc" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/banana.tscn" id="13_wt3ry"]
+[ext_resource type="PackedScene" uid="uid://cdax0nlkkukuh" path="res://GEP Core/Assets/Halloween Assets/gltf/path_C.gltf" id="14_mco4t"]
 [ext_resource type="PackedScene" uid="uid://2my1lepx3t0o" path="res://GEP Core/Scenes/Inventory Panel.tscn" id="14_tv4n6"]
+[ext_resource type="PackedScene" uid="uid://c7yob5gsbdkan" path="res://GEP Core/Assets/Halloween Assets/gltf/path_D.gltf" id="15_121fo"]
+[ext_resource type="PackedScene" uid="uid://br0ybb52yy2gg" path="res://GEP Core/Assets/Halloween Assets/prefabs/pinetreeyellowlarge.tscn" id="15_qr3ta"]
+[ext_resource type="PackedScene" uid="uid://ccnlote47bj4x" path="res://GEP Core/Assets/Halloween Assets/gltf/path_B.gltf" id="16_vch0f"]
+[ext_resource type="PackedScene" uid="uid://kfg2h1uy1hft" path="res://GEP Core/Assets/Halloween Assets/prefabs/fence.tscn" id="17_l0loc"]
 [ext_resource type="PackedScene" uid="uid://mm84upwiu3pr" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Vegetables/potato.tscn" id="19_usxcr"]
 [ext_resource type="PackedScene" uid="uid://djc5c1oyajhky" path="res://GEP Core/Assets/Items/3D Fruit n Veg Prefabs/Fruits/watermelon.tscn" id="26_0edyv"]
 
@@ -28,6 +36,9 @@ sdfgi_enabled = true
 adjustment_enabled = true
 adjustment_saturation = 1.15
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12rqf"]
+albedo_texture = ExtResource("4_43ivi")
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7a1vd"]
 
 [sub_resource type="Theme" id="Theme_dtxi8"]
@@ -39,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815773, -1.43051e-06, 0.1
 script = ExtResource("1_nj1m4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.892271, -0.274443, 0.358516, 2.02684e-08, 0.794054, 0.607847, -0.451501, 0.542364, -0.708511, 0, 2.76815, 9.26053)
+transform = Transform3D(-0.904134, -0.0812783, 0.419446, 0.425939, -0.24827, 0.870022, 0.033422, 0.965275, 0.259089, 0, 2.76815, 9.26053)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -56,106 +67,170 @@ material = ExtResource("3_5x4se")
 [node name="Floor" type="CSGBox3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14482, 0)
 layers = 5
+material_override = SubResource("StandardMaterial3D_12rqf")
 use_collision = true
 collision_layer = 4
 collision_mask = 5
 size = Vector3(47.5872, 0.1, 47.791)
 material = ExtResource("4_g25g5")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Level"]
-transform = Transform3D(0.833182, 0, 0.552999, 0, 1, 0, -0.552999, 0, 0.833182, 16.5477, 44.3649, -15.0059)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(4, 6, 8)
-material = ExtResource("5_wt3ry")
+[node name="Trees" type="Node3D" parent="Level"]
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Level"]
-transform = Transform3D(-0.318513, 0, 0.947919, 0, 1, 0, -0.947919, 0, -0.318513, 0.541599, 34.4738, 3.986)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(4, 6, 8)
-material = ExtResource("5_wt3ry")
+[node name="PinetreeYellowLarge7" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99325, 0.749579, -2.53499)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 23.4738, -6.9983)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(6, 8, 6)
-material = ExtResource("6_qr3ta")
+[node name="PinetreeYellowLarge8" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77446, 0.74958, 1.66461)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 23.4738, -6.9983)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(4, 4, 6)
-material = ExtResource("6_qr3ta")
+[node name="PinetreeYellowLarge9" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50354, 0.749579, 3.36047)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 22.4738, -10.9983)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(4, 2, 2)
-material = ExtResource("6_qr3ta")
+[node name="PinetreeYellowLarge10" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02007, 0.749578, 5.87353)
 
-[node name="Node3D" type="Node3D" parent="Level"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -17.521, 21.279, -18.7606)
+[node name="PinetreeYellowLarge11" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.65894, 0.749578, 4.84731)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Level/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.233154, 0.69482, -0.0343475)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(8, 1, 1)
-material = ExtResource("7_2rqs0")
+[node name="PinetreeYellowLarge12" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548003, 0.749579, 6.57786)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Level/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76685, 1.69482, -0.0343475)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(4, 1, 1)
-material = ExtResource("7_2rqs0")
+[node name="PinetreeYellowLarge13" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73235, 0.749579, -0.314781)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Level/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76685, 2.69482, -0.0343475)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-material = ExtResource("7_2rqs0")
+[node name="PinetreeYellowLarge14" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.16279, 0.74958, 2.72297)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000460625, 26.4551, 4.00011)
-use_collision = true
-collision_layer = 4
-collision_mask = 0
-size = Vector3(24, 10, 16)
-material = ExtResource("8_l0loc")
+[node name="PinetreeYellowLarge15" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.32578, 0.749579, 4.63493)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Level/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -3, -7)
-operation = 2
-size = Vector3(4, 6, 2)
-material = ExtResource("8_l0loc")
+[node name="PinetreeYellowLarge" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5181, 0.74958, -8.97864)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Level/CSGBox3D"]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, 11, -3, 0)
-operation = 2
-size = Vector3(12, 6, 2)
-material = ExtResource("8_l0loc")
+[node name="PinetreeYellowLarge2" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1178, 0.74958, -5.84667)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Level/CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-operation = 2
-size = Vector3(22, 10, 14)
-material = ExtResource("8_l0loc")
+[node name="PinetreeYellowLarge3" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.19343, 0.74958, -6.05942)
+
+[node name="PinetreeYellowLarge4" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92043, 0.74958, -9.23896)
+
+[node name="PinetreeYellowLarge5" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5527, 0.74958, -7.37617)
+
+[node name="PinetreeYellowLarge6" parent="Level/Trees" instance=ExtResource("15_qr3ta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9765, 0.74958, -4.6292)
+
+[node name="Fences" type="Node3D" parent="Level"]
+
+[node name="Fence" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.12743, 0.194819, -13.2666)
+
+[node name="Fence2" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(0.848667, 0, -0.528927, 0, 1, 0, 0.528927, 0, 0.848667, 8.84084, 0.19482, -12.109)
+
+[node name="Fence3" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(0.435168, 0, -0.900349, 0, 1, 0, 0.900349, 0, 0.435168, 11.5935, 0.19482, -9.15928)
+
+[node name="Fence4" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82211, 0.19482, -13.4715)
+
+[node name="Fence5" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(0.825586, 0, 0.564276, 0, 1, 0, -0.564276, 0, 0.825586, -8.4376, 0.19482, -12.2712)
+
+[node name="Fence6" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(0.296758, 0, 0.954953, 0, 1, 0, -0.954953, 0, 0.296758, -10.7013, 0.199623, -9.28979)
+
+[node name="Archway" parent="Level/Fences" instance=ExtResource("6_2rqs0")]
+transform = Transform3D(1.55291, 0, 0, 0, 1.55291, 0, 0, 0, 1.55291, 0.693681, 0.194821, -13.5827)
+
+[node name="Fence7" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(-0.0147301, 0, 0.999892, 0, 1, 0, -0.999892, 0, -0.0147301, 12.0585, 0.19482, -5.38719)
+
+[node name="Fence8" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(0.220238, 0, 0.975446, 0, 1, 0, -0.975446, 0, 0.220238, 11.9253, 0.19482, -1.56715)
+
+[node name="Fence9" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0536, 0.19482, 0.524484)
+
+[node name="Fence10" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(0.0796422, 0, 0.996823, 0, 1, 0, -0.996823, 0, 0.0796422, -11.5156, 0.19482, -5.50267)
+
+[node name="Fence11" parent="Level/Fences" instance=ExtResource("17_l0loc")]
+transform = Transform3D(-0.46634, 0, 0.884605, 0, 1, 0, -0.884605, 0, -0.46634, -10.8209, 0.19482, -1.67909)
+
+[node name="Paths" type="Node3D" parent="Level"]
+
+[node name="path_A2" parent="Level/Paths" instance=ExtResource("13_0qwuy")]
+transform = Transform3D(1.96016, 0, 0, 0, 1, 0, 0, 0, 1, 0.12641, 0.19482, -12.2455)
+
+[node name="path_C2" parent="Level/Paths" instance=ExtResource("14_mco4t")]
+transform = Transform3D(1.45175, 0, 0.689553, 0, 1, 0, -0.807666, 0, 1.23944, 2.72519, 0.19482, -10.1297)
+
+[node name="path_D2" parent="Level/Paths" instance=ExtResource("15_121fo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328859, 0.19482, -8.73709)
+
+[node name="path_D3" parent="Level/Paths" instance=ExtResource("15_121fo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63802, 0.19482, -7.41558)
+
+[node name="path_D4" parent="Level/Paths" instance=ExtResource("15_121fo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06391, 0.19482, -10.5865)
+
+[node name="path_D5" parent="Level/Paths" instance=ExtResource("15_121fo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22617, 0.19482, -10.5162)
+
+[node name="path_B2" parent="Level/Paths" instance=ExtResource("16_vch0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101804, 0.19482, -10.3727)
+
+[node name="path_A3" parent="Level/Paths" instance=ExtResource("13_0qwuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74863, 0.19482, -10.433)
+
+[node name="path_C3" parent="Level/Paths" instance=ExtResource("14_mco4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93387, 0.19482, -8.52817)
+
+[node name="path_B3" parent="Level/Paths" instance=ExtResource("16_vch0f")]
+transform = Transform3D(1.23356, 0, 0.965949, 0, 1.56676, 0, -0.965949, 0, 1.23356, 4.24435, 0.19482, -4.27025)
+
+[node name="path_B4" parent="Level/Paths" instance=ExtResource("16_vch0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.992032, 0.19482, -3.04026)
+
+[node name="path_A4" parent="Level/Paths" instance=ExtResource("13_0qwuy")]
+transform = Transform3D(1.35598, 0, -0.765585, 0, 1.48188, 0, 1.29083, 0, 0.804224, -1.71899, 0.19482, -3.95416)
+
+[node name="WithinArea" type="Node3D" parent="Level"]
+
+[node name="MarketStall" parent="Level/WithinArea" instance=ExtResource("7_tv4n6")]
+transform = Transform3D(-4.2811, 0, 3.32472, 0, 5.42048, 0, -3.32472, 0, -4.2811, -5.58152, 0.0983795, 1.07606)
+
+[node name="MarketStall2" parent="Level/WithinArea" instance=ExtResource("7_tv4n6")]
+transform = Transform3D(-3.66565, 0, -2.10138, 0, 4.22526, 0, 2.10138, 0, -3.66565, 5.51344, 0.221735, -0.134656)
+
+[node name="Barrles" parent="Level/WithinArea" instance=ExtResource("9_usxcr")]
+transform = Transform3D(5.76904, 0, 0, 0, 5.76904, 0, 0, 0, 5.76904, 1.26854, 0.19482, -0.77454)
+
+[node name="Barrles2" parent="Level/WithinArea" instance=ExtResource("9_usxcr")]
+transform = Transform3D(6.9603, 0, 0, 0, 6.9603, 0, 0, 0, 6.9603, -5.70399, 0.19482, -5.02667)
+
+[node name="Barrles3" parent="Level/WithinArea" instance=ExtResource("9_usxcr")]
+transform = Transform3D(7.41158, 0, 0, 0, 7.41158, 0, 0, 0, 7.41158, 9.8057, 0.19482, -5.87129)
+
+[node name="Bench" parent="Level/WithinArea" instance=ExtResource("11_j1tug")]
+transform = Transform3D(-0.26776, 0, 0.963486, 0, 1, 0, -0.963486, 0, -0.26776, -5.83421, 0.19482, -7.11042)
+
+[node name="Bench2" parent="Level/WithinArea" instance=ExtResource("11_j1tug")]
+transform = Transform3D(0.591352, 0, 0.806414, 0, 1, 0, -0.806414, 0, 0.591352, -5.55333, 0.19482, -9.4199)
+
+[node name="Bench3" parent="Level/WithinArea" instance=ExtResource("11_j1tug")]
+transform = Transform3D(-0.173339, 0, 0.984862, 0, 1, 0, -0.984862, 0, -0.173339, 7.35918, 0.19482, -10.5505)
+
+[node name="Bench4" parent="Level/WithinArea" instance=ExtResource("11_j1tug")]
+transform = Transform3D(0.478952, 0, 0.877841, 0, 1, 0, -0.877841, 0, 0.478952, 7.25783, 0.19482, -8.21388)
+
+[node name="Statue" parent="Level/WithinArea" instance=ExtResource("12_0edyv")]
+transform = Transform3D(-0.999615, 0.000974446, -0.0277464, 0.000977597, 1, -9.99478e-05, 0.0277463, -0.000127042, -0.999615, 0.0492891, 0.19482, -6.68935)
 
 [node name="PlayerTemplate" parent="." instance=ExtResource("9_tv4n6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00578213, -0.0171287, -19.8443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00578213, -0.0171287, -16.8399)
 collision_layer = 9
 collision_mask = 6
 
@@ -290,24 +365,24 @@ layout_mode = 2
 [node name="Items" type="Node3D" parent="."]
 
 [node name="apple" parent="Items" instance=ExtResource("12_wt3ry")]
-transform = Transform3D(22.2861, 0, 0, 0, 22.2861, 0, 0, 0, 22.2861, 6.06755, -0.223648, -15.7655)
+transform = Transform3D(11.7857, 0, 0, 0, 11.7857, 0, 0, 0, 11.7857, -0.980364, 0.0458403, -9.93802)
 
 [node name="banana" parent="Items" instance=ExtResource("13_wt3ry")]
-transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, 9.43527, 0.438058, -21.4188)
+transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, 5.19288, 0.159314, -8.34597)
 
 [node name="lemon" parent="Items" instance=ExtResource("13_qr3ta")]
-transform = Transform3D(17.3898, 0, 0, 0, 17.3898, 0, 0, 0, 17.3898, 6.71235, 0.19497, -22.7168)
+transform = Transform3D(9.37064, 0, 0, 0, 9.37064, 0, 0, 0, 9.37064, -1.69543, 0.19497, -3.31762)
 
 [node name="watermelon" parent="Items" instance=ExtResource("26_0edyv")]
-transform = Transform3D(7.0795, 0, 0, 0, 7.0795, 0, 0, 0, 7.0795, 8.9802, 0.194999, -18.987)
+transform = Transform3D(4.17022, 0, 0, 0, 4.17022, 0, 0, 0, 4.17022, 3.85142, 0.194999, -3.59894)
 
 [node name="apple2" parent="Items" instance=ExtResource("12_wt3ry")]
-transform = Transform3D(8.60936, 0, 0, 0, 8.60936, 0, 0, 0, 8.60936, 3.24011, 0.195138, -21.7046)
+transform = Transform3D(8.60936, 0, 0, 0, 8.60936, 0, 0, 0, 8.60936, 3.18465, 0.195138, -10.9406)
 
 [node name="potato" parent="Items" instance=ExtResource("19_usxcr")]
-transform = Transform3D(12.2784, 0, 0, 0, 12.2784, 0, 0, 0, 12.2784, 0.467937, 0.194927, -14.9502)
+transform = Transform3D(8.65668, 0, 0, 0, 8.65668, 0, 0, 0, 8.65668, -4.50771, 0.145392, -7.27345)
 
-[node name="banana" parent="." instance=ExtResource("13_wt3ry")]
-transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, 4.11918, 0.19482, -18.8782)
+[node name="banana2" parent="Items" instance=ExtResource("13_wt3ry")]
+transform = Transform3D(4.74428, 0, 0, 0, 4.74428, 0, 0, 0, 4.74428, -1.73793, 0.19482, -6.87911)
 
 [connection signal="item_removal" from="UserInterface/Inventory/NinePatchRect/GridContainer/Panel1" to="UserInterface/Inventory" method="_on_panel_1_item_removal"]

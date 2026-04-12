@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://caxr1dibeyooq"]
+
+[ext_resource type="PackedScene" uid="uid://b74kggcjhxn50" path="res://GEP Core/Assets/Medeval/buildings/blue/building_market_blue.gltf" id="1_mi20p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojr21"]
+size = Vector3(1.36975, 0.854126, 0.71637)
+
+[node name="MarketStall" type="Node3D"]
+
+[node name="building_market_blue2" parent="." instance=ExtResource("1_mi20p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0642503, 0, 0.310724)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0603638, 0.378723, -0.00845337)
+shape = SubResource("BoxShape3D_ojr21")

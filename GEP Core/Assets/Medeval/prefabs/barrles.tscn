@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://f3vo4uco2bn1"]
+
+[ext_resource type="PackedScene" uid="uid://dtkpfrfbohyoi" path="res://GEP Core/Assets/Medeval/decoration/props/barrel.gltf" id="1_4tbgw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pgwd4"]
+size = Vector3(0.633667, 0.795898, 0.614136)
+
+[node name="Barrles" type="Node3D"]
+
+[node name="barrel2" parent="." instance=ExtResource("1_4tbgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0522435, -1.19209e-07, 0.0163844)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.289902, 0, 0, 0, 0.289902, 0, 0, 0, 0.289902, -0.0531003, 0.0822426, 0.00762619)
+shape = SubResource("BoxShape3D_pgwd4")

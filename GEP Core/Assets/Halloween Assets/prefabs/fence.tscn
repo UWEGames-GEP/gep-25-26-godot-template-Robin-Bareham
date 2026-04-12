@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://kfg2h1uy1hft"]
+
+[ext_resource type="PackedScene" uid="uid://f1rigus6257c" path="res://GEP Core/Assets/Halloween Assets/gltf/fence.gltf" id="1_fk3ap"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_euma1"]
+size = Vector3(1, 1.71484, 1)
+
+[node name="Fence" type="Node3D"]
+
+[node name="fence2" parent="." instance=ExtResource("1_fk3ap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0863608, 0, 0.188748)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fence2"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fence2/StaticBody3D"]
+transform = Transform3D(4.15818, 0, 0, 0, 1.19442, 0, 0, 0, 0.534428, 0, 1.05894, 0)
+shape = SubResource("BoxShape3D_euma1")

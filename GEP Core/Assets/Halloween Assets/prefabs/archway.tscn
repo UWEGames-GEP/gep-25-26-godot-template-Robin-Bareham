@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://buyscn8khfmf8"]
+
+[ext_resource type="PackedScene" uid="uid://bdubjn7xf53wd" path="res://GEP Core/Assets/Halloween Assets/gltf/arch.gltf" id="1_ypd6v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sj6f0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ma8x"]
+
+[node name="Archway" type="Node3D"]
+
+[node name="arch2" parent="." instance=ExtResource("1_ypd6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.372404, 0, 0.321957)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="arch2"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arch2/StaticBody3D"]
+transform = Transform3D(0.630841, 0, 0, 0, 2.54693, 0, 0, 0, 0.630841, -1.74109, 1.18247, 0)
+shape = SubResource("BoxShape3D_sj6f0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="arch2/StaticBody3D"]
+transform = Transform3D(0.630841, 0, 0, 0, 2.54693, 0, 0, 0, 0.630841, 1.74654, 1.28097, 0)
+shape = SubResource("BoxShape3D_1ma8x")

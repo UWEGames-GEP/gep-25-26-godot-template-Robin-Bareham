@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs201b51n04g0"]
+
+[ext_resource type="PackedScene" uid="uid://fh8skkyius0d" path="res://GEP Core/Assets/Halloween Assets/gltf/plaque.gltf" id="1_r48y2"]
+[ext_resource type="PackedScene" uid="uid://dwj5r2ul4vygk" path="res://GEP Core/Assets/Halloween Assets/gltf/shrine_candles.gltf" id="3_ovay4"]
+[ext_resource type="PackedScene" uid="uid://cvbpsfqiefhy8" path="res://GEP Core/Assets/Halloween Assets/gltf/gravestone.gltf" id="3_r48y2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8eq2o"]
+size = Vector3(3.14038, 1.20648, 1.15979)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lov3a"]
+size = Vector3(2.0332, 0.768555, 2.06982)
+
+[node name="Statue" type="Node3D"]
+
+[node name="plaque2" parent="." instance=ExtResource("1_r48y2")]
+transform = Transform3D(1, 0, 0, 0, 3.57193, 0, 0, 0, 1, 0.0251948, 0, -0.00166416)
+
+[node name="shrine_candles2" parent="." instance=ExtResource("3_ovay4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977678, 0, 0.00198638)
+
+[node name="shrine_candles3" parent="." instance=ExtResource("3_ovay4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07072, 0.0391096, 0.0085561)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.01099, 0, 0, 0, 1.01099, 0, 0, 0, 1.01099, -0.0818891, 0.845985, 0.0167199)
+shape = SubResource("BoxShape3D_8eq2o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0342979, 0.354156, 0.00123131)
+shape = SubResource("BoxShape3D_lov3a")
+
+[node name="gravestone2" parent="." instance=ExtResource("3_r48y2")]
+transform = Transform3D(0.39403, 0, 0, 0, 0.39403, 0, 0, 0, 0.39403, 0.0378843, 1.39947, 0.110429)
